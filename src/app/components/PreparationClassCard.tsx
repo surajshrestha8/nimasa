@@ -1,17 +1,28 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faAddressBook } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const PreparationClassCard = () => {
+export interface PreparationClassCardProps {
+  title: string;
+  content: string;
+  icon: IconProp;
+}
+
+const PreparationClassCard = ({
+  title,
+  content,
+  icon,
+}: PreparationClassCardProps) => {
   return (
     <div
       style={{
         paddingLeft: "20px",
         paddingBottom: "20px",
-        paddingTop: '20px',
+        paddingTop: "20px",
         backgroundColor: "#f7f8f9",
         width: "600px",
-        minWidth: '200px',
+        minWidth: "200px",
         display: "flex",
         flexDirection: "column",
         fontSize: "20px",
@@ -19,21 +30,12 @@ const PreparationClassCard = () => {
       }}
     >
       <div style={{ display: "flex", alignItems: "center" }}>
-        <FontAwesomeIcon
-          icon={faAddressBook}
-          height={50}
-          width={50}
-          color="#054d7f"
-        />
+        <FontAwesomeIcon icon={icon} height={50} width={50} color="#054d7f" />
         <h3 style={{ fontSize: "29px", fontWeight: 700, marginLeft: "20px" }}>
-          IELTS
+          {title}
         </h3>
       </div>
-      <p style={{ marginBottom: "1.5em", marginTop: "20px" }}>
-        IELTS means International English Language Testing System and it is a
-        test of English language proficiency. The test is designed to assess the
-        language ability of non-native speakers of English…
-      </p>
+      <p style={{ marginBottom: "1.5em", marginTop: "20px" }}>{content}</p>
       <button
         style={{ width: "250px", textAlign: "left", color: "#1b64a4" }}
         className=" background-transparent font-bold uppercase outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"

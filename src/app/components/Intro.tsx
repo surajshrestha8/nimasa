@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import CeoMessage from "./CeoMessage";
 import Service from "./Service";
@@ -26,8 +27,21 @@ const Intro = () => {
           <h2 style={{ color: "#d20000", fontSize: "35px", marginBottom: 0 }}>
             WHO WE ARE
           </h2>
-          <p style={{ fontSize: "35px", lineHeight: "1em", marginBottom: 0 }}>
-            We are Professional Educational Consultancy in Nepal.
+          <p
+            style={{
+              fontSize: "20px",
+              lineHeight: "1em",
+              marginBottom: 0,
+              textAlign: "justify",
+            }}
+          >
+            We are a team of dedicated professionals with extensive experience
+            in the field of international education. Our advisors,
+            counselors,and mentors are committed to providing personalized
+            support to students from all backgrounds. Whether you're a high
+            school student exploring study abroad options or a working
+            professional seeking advanced degrees overseas, we're here to help
+            you navigate the complexities of the global education landscape.
           </p>
         </div>
         <div
@@ -44,7 +58,7 @@ const Intro = () => {
       <CeoMessage />
       <Service />
       <PreparationClass />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Enquiry />
     </>
   );
